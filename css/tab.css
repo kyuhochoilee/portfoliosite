@@ -1,38 +1,48 @@
+
 .tab {
-    width: 20%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 }
 
 .tablinks {
-    padding: 1em;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.3em;
+    font-weight:lighter;
+    margin-bottom: 1em;
+    margin-left: 1.8em;
     background-color: transparent;
     border: none;
     outline: none;
     text-align: left;
 }
 
+.tablinks:hover {
+    color: darkgray;
+    transition-duration: 0.4s;
+}
 .active {
     font-weight: bold;
 }
 
+.active:hover {
+    color: black;
+}
+
 .layout {
     display: grid;
-    grid-template-columns: 20% auto;
-    grid-template-rows: 40% auto;
+    grid-template-columns: 40% auto;
+    grid-template-rows: auto;
+        margin-top: 1em;
+
 }
 
-.tabcontent .description {
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-end: 2;
+.description {
+    font-family: 'Josefin Sans', sans-serif;
 }
 
-.tabcontent .furtherinfo{
-    grid-column-start: 1;
-    grid-column-end: 3;
-    grid-row-start: 2;
-    grid-row-end: 3;
+.furtherinfo {
+    display: flex; 
+    justify-content: center;
+    margin: 0 2.4em;
 }

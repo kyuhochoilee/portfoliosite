@@ -8,8 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="css/bar.css" type="text/css">
     <link rel="stylesheet" href="css/tab.css" type="text/css">
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/music.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/df83d895b9.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 </head>
 
 <body>
@@ -37,18 +40,16 @@
     <div class="layout">
 
         <div class="tab">
-            <button class="tablinks" onclick="openTab(event, 'resume')" id="defaultOpen">résumé</button>
-            <button class="tablinks" onclick="openTab(event, 'original')">original compositions</button>
-            <button class="tablinks" onclick="openTab(event, 'contemporary')">contemporary vocals</button>
-            <button class="tablinks" onclick="openTab(event, 'select')">select choir</button>
+            <button class="tablinks" onclick="openTab(event, 'resume', 'resumefurther')" id="defaultOpen">résumé</button>
+            <button class="tablinks" onclick="openTab(event, 'original', 'originalfurther')">original compositions</button>
+            <button class="tablinks" onclick="openTab(event, 'contemporary', 'contemporaryfurther')">contemporary vocals</button>
+            <button class="tablinks" onclick="openTab(event, 'select', 'selectfurther')">select choir</button>
         </div>
 
         <div id="resume" class="tabcontent">
             <p class="description">Music Resume stuff</p>
         </div>
-        <div id = "resume" class = "tabcontent">
-            <img class="furtherinfo" src="img/rpsdiwali.JPG" alt="kyuho solos with rps at diwali festival">
-        </div>
+
         <div id="original" class="tabcontent">
             <p>Random stuff about makin compositions</p>
         </div>
@@ -62,8 +63,31 @@
         </div>
     </div>
 
+
+    <div class="tabcontent furtherinfo" id="resumefurther">
+        <img class="resumefurther" src="img/rpsdiwali.JPG" alt="kyuho solos with rps at diwali festival">
+    </div>
+
+
+    <div class="tabcontent furtherinfo" id="originalfurther">
+        <audio controls>
+            <source src="/audio/woahwaoah.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <img class="originalfurther" src="img/rpsdiwali.JPG" alt="kyuho solos with rps at diwali festival">
+    </div>
+
+
+    <div class="tabcontent furtherinfo" id="contemporaryfurther">
+        <img class="contemporaryfurther" src="img/rpsdiwali.JPG" alt="kyuho solos with rps at diwali festival">
+    </div>
+
+    <div class="tabcontent furtherinfo" id="selectfurther">
+        <img class="selectfurther" src="img/rpsdiwali.JPG" alt="kyuho solos with rps at diwali festival">
+    </div>
+
     <script>
-        function openTab(evt, tabName) {
+        function openTab(evt, tabName, tabNameAgain) {
             var i, tabcontent, tablinks;
             tabcontent = document.getElementsByClassName("tabcontent");
             for (i = 0; i < tabcontent.length; i++) {
@@ -74,6 +98,7 @@
                 tablinks[i].className = tablinks[i].className.replace(" active", "");
             }
             document.getElementById(tabName).style.display = "block";
+            document.getElementById(tabNameAgain).style.display = "flex";
             evt.currentTarget.className += " active";
         }
         document.getElementById("defaultOpen").click();
