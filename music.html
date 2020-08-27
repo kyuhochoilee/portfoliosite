@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title>music - kyuho lee</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/bar.css" type="text/css">
+    <link rel="stylesheet" href="css/tab.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/df83d895b9.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <nav class="fullbar">
+        <div>
+            <a href="index.html" title="home"><img class="logo" src="img/longlogo.png" alt="kyuho lee" width="250" height="63"></a>
+        </div>
+        <a class="navbar-toggle" id="js-navbar-toggle" onclick="myToggle()">
+            <i class="fas fa-bars"></i>
+        </a>
+        <ul class="navbar" id="bar">
+            <li>
+                <a class="menuitem" href="about.html" title="about">about</a>
+            </li>
+            <li>
+                <a class="menuitem" href="#" title="music"><span class="activebar">music</span></a>
+            </li>
+            <li>
+                <a class="menuitem" href="design.html" title="design">design</a>
+            </li>
+            <hr />
+        </ul>
+    </nav>
+    <div class="layout">
+
+        <div class="tab">
+            <button class="tablinks" onclick="openTab(event, 'resume')" id="defaultOpen">résumé</button>
+            <button class="tablinks" onclick="openTab(event, 'original')">original compositions</button>
+            <button class="tablinks" onclick="openTab(event, 'contemporary')">contemporary vocals</button>
+            <button class="tablinks" onclick="openTab(event, 'select')">select choir</button>
+        </div>
+
+        <div id="resume" class="tabcontent">
+            <p class="description">Music Resume stuff</p>
+        </div>
+        <div id = "resume" class = "tabcontent">
+            <img class="furtherinfo" src="img/rpsdiwali.JPG" alt="kyuho solos with rps at diwali festival">
+        </div>
+        <div id="original" class="tabcontent">
+            <p>Random stuff about makin compositions</p>
+        </div>
+
+        <div id="contemporary" class="tabcontent">
+            <p>Videos follies, rps videos</p>
+        </div>
+
+        <div id="select" class="tabcontent">
+            <p>Singggg thatttt thingggggggggg and carnegie hall i guesss</p>
+        </div>
+    </div>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+        document.getElementById("defaultOpen").click();
+
+    </script>
+</body>
