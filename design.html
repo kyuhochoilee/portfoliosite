@@ -3,19 +3,62 @@
 <html lang="en">
 
 <head>
-    <title>music - kyuho lee</title>
+    <title>design - kyuho lee</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="css/bar.css" type="text/css">
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/tab.css" type="text/css">
+    <!--    <link rel="stylesheet" href="css/music.css" type="text/css">-->
+    <link rel="stylesheet" href="css/musics.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@300;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/df83d895b9.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/amplitudejs@5.2.0/dist/amplitude.js"></script>
+    <!--    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">-->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <!--    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>-->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <style>
+        /*
+    body {
+    background: #fff;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+    }
+*/
+        .swiper-container {
+            width: 100%;
+            padding-bottom: 50px;
+        }
+
+        .swiper-slide {
+            background-position: center;
+            background-size: cover;
+            width: 245px;
+            height: 400px;
+
+        }
+
+        .swiper-container-3d .swiper-slide-shadow-left {
+            border-radius: 20px;
+        }
+
+        .swiper-container-3d .swiper-slide-shadow-right {
+            border-radius: 20px;
+        }
+
+    </style>
 </head>
 
 <body>
 
     <nav class="fullbar">
         <div>
-            <a href="index.html" title="home"><img class="logo" src="img/longlogo.png" alt="kyuho lee" width="250" height="63"></a>
+            <a href="index.html" title="home"><img class="logo" src="img/longlogo.png" alt="kyuho lee" width="200" height="43"></a>
         </div>
         <a class="navbar-toggle" id="js-navbar-toggle" onclick="myToggle()">
             <i class="fas fa-bars"></i>
@@ -33,26 +76,167 @@
             <hr />
         </ul>
     </nav>
-    <div class="tab">
-        <button>résumé</button>
-        <button>original compositions</button>
-        <button>contemporary vocals</button>
-        <button>select choir</button>
+    <div class="layout">
+
+        <div class="tab">
+            <button class="tablinks" onclick="openTab(event, 'resume', 'resumefurther')" id="defaultOpen">résumé</button>
+            <button class="tablinks" onclick="openTab(event, 'original', 'originalfurther')">websites</button>
+            <button class="tablinks" onclick="openTab(event, 'contemporary', 'contemporaryfurther')">graphics</button>
+        </div>
+
+        <div id="resume" class="tabcontent">
+            <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+        </div>
+
+        <div id="original" class="tabcontent">
+            <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+        </div>
+
+        <div id="contemporary" class="tabcontent">
+            <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+        </div>
+    </div>
+    <div class="tabcontent furtherinfo" id="resumefurther">
+        <img class="resumefurther" src="img/rpsdiwali.JPG" alt="kyuho solos with rps at diwali festival">
+    </div>
+    <div class="tabcontent furtherinfo" id="originalfurther">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                </div>
+                <div class="swiper-slide">
+                </div>
+                <div class="swiper-slide">
+                </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+        <script>
+            var swiper = new Swiper('.swiper-container', {
+                effect: 'coverflow',
+                grabCursor: false,
+                centeredSlides: true,
+                slidesPerView: 'auto',
+                coverflowEffect: {
+                    rotate: 50,
+                    stretch: 0,
+                    depth: 100,
+                    modifier: 1,
+                    slideShadows: true,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                },
+            });
+
+        </script>
     </div>
 
-    <div>
-        <p>Music Resume stuff</p>
-        <img src="img/rpsdiwali.JPG" alt="kyuho solos with rps at diwali festival">
-    </div>
-    <div>
-        <p>Random stuff about makin compositions</p>
+    <div class="tabcontent furtherinfo" id="contemporaryfurther">
+
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                </div>
+                <div class="swiper-slide">
+                </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+            <script>
+                var swiper = new Swiper('.swiper-container', {
+                    effect: 'coverflow',
+                    grabCursor: false,
+                    centeredSlides: true,
+                    slidesPerView: 'auto',
+                    coverflowEffect: {
+                        rotate: 50,
+                        stretch: 0,
+                        depth: 100,
+                        modifier: 1,
+                        slideShadows: true,
+                    },
+                    pagination: {
+                        el: '.swiper-pagination',
+                    },
+                });
+
+            </script>
+        </div>
     </div>
 
-    <div>
-        <p>Videos follies, rps videos</p>
-    </div>
+    <script>
+        function openTab(evt, tabName, tabNameAgain) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            document.getElementById(tabNameAgain).style.display = "flex";
+            evt.currentTarget.className += " active";
+        }
+        document.getElementById("defaultOpen").click();
 
-    <div>
-        <p>Singggg thatttt thingggggggggg and carnegie hall i guesss</p>
-    </div>
+    </script>
+    <script>
+        Amplitude.init({
+            "songs": [{
+                    "name": "home",
+                    "artist": "EDEN",
+                    "album": "periscope tapes",
+                    "url": "./audio/home.mp3",
+                    "cover_art_url": "./img/sameoldsong.png"
+                },
+                {
+                    "name": "dreaming about you",
+                    "artist": "EDEN",
+                    "album": "periscope tapes",
+                    "url": "./audio/dreamingaboutyou.mp3",
+                    "cover_art_url": "./img/sameoldsong.png"
+                },
+                {
+                    "name": "Chevalier",
+                    "artist": "Daniel Caesar",
+                    "album": "Birds of Paradise EP",
+                    "url": "./audio/chevalier.mp3",
+                    "cover_art_url": "./img/sameoldsong.png"
+                }
+
+            ]
+        });
+
+        document.getElementById('song-played-progress-1').addEventListener('click', function(e) {
+            if (Amplitude.getActiveIndex() == 0) {
+                var offset = this.getBoundingClientRect();
+                var x = e.pageX - offset.left;
+
+                Amplitude.setSongPlayedPercentage((parseFloat(x) / parseFloat(this.offsetWidth)) * 100);
+            }
+        });
+
+        document.getElementById('song-played-progress-2').addEventListener('click', function(e) {
+            if (Amplitude.getActiveIndex() == 1) {
+                var offset = this.getBoundingClientRect();
+                var x = e.pageX - offset.left;
+
+                Amplitude.setSongPlayedPercentage((parseFloat(x) / parseFloat(this.offsetWidth)) * 100);
+            }
+        });
+
+        document.getElementById('song-played-progress-3').addEventListener('click', function(e) {
+            if (Amplitude.getActiveIndex() == 2) {
+                var offset = this.getBoundingClientRect();
+                var x = e.pageX - offset.left;
+
+                Amplitude.setSongPlayedPercentage((parseFloat(x) / parseFloat(this.offsetWidth)) * 100);
+            }
+        });
+
+    </script>
 </body>

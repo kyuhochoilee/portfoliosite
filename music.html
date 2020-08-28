@@ -14,10 +14,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@300;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/df83d895b9.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/amplitudejs@5.2.0/dist/amplitude.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
-    <!--    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">-->
-    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
-    <!--    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>-->
+    <!--    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">-->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <!--    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>-->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
     <style>
         /*
@@ -30,7 +30,6 @@
     padding: 0;
     }
 */
-
         .swiper-container {
             width: 100%;
             padding-bottom: 50px;
@@ -42,6 +41,26 @@
             width: 245px;
             height: 400px;
 
+        }
+
+        .videos .swiper-wrapper .swiper-slide {
+            width: 450px;
+            height: 350px;
+            background-color: #ededed;
+            border-radius: 20px;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+        }
+        
+        .videos {
+            padding-top: 20px;
+        }
+
+        .swiper-container-3d .swiper-slide-shadow-left {
+            border-radius: 20px;
+        }
+
+        .swiper-container-3d .swiper-slide-shadow-right {
+            border-radius: 20px;
         }
 
     </style>
@@ -197,9 +216,42 @@
 
         </script>
     </div>
-    
+
     <div class="tabcontent furtherinfo" id="contemporaryfurther">
-        <img class="contemporaryfurther" src="img/rpsdiwali.JPG" alt="kyuho solos with rps at diwali festival">
+
+        <div class="swiper-container videos">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <iframe width="450" height="253" src="https://www.youtube.com/embed/grTHxYK9Gx8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <p class="description">Hey pepe</p>
+                </div>
+                <div class="swiper-slide">
+                    <iframe width="450" height="253" src="https://www.youtube.com/embed/IaGVAU5WY68" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <p class="description">Hey pepe</p>
+                </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+            <script>
+                var swiper = new Swiper('.swiper-container', {
+                    effect: 'coverflow',
+                    grabCursor: false,
+                    centeredSlides: true,
+                    slidesPerView: 'auto',
+                    coverflowEffect: {
+                        rotate: 50,
+                        stretch: 0,
+                        depth: 100,
+                        modifier: 1,
+                        slideShadows: true,
+                    },
+                    pagination: {
+                        el: '.swiper-pagination',
+                    },
+                });
+
+            </script>
+        </div>
     </div>
 
     <div class="tabcontent furtherinfo" id="selectfurther">

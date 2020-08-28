@@ -5,7 +5,9 @@
 
 }
 
-
+iframe {
+    border-radius: 20px;
+}
 /*
   1. Base
 */
@@ -18,6 +20,11 @@
 }
 
 .swiper-container-3d .swiper-slide-shadow-right {
+    border-radius: 20px;
+}
+
+
+.swiper-container-3d .swiper-slide-shadow-active {
     border-radius: 20px;
 }
 div.player {
