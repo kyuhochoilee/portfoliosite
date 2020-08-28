@@ -1,5 +1,5 @@
 * {
-    background-color: #fff0f6;
+/*    background-color: #fff0f6;*/
 }
 
 .view {
@@ -42,6 +42,7 @@ ul {
     padding: 0.2em;
     position: relative;
 }
+
 .menuitem::before {
     content: "";
     position: absolute;
@@ -62,7 +63,7 @@ ul {
 
 .pic {
     border-radius: 176px;
-    filter: drop-shadow(0px 2px 3px #3d3d3d);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
 }
 
 .logo {
