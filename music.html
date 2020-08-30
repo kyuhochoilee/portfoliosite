@@ -14,10 +14,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@300;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/df83d895b9.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/amplitudejs@5.2.0/dist/amplitude.js"></script>
-    <!--    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">-->
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-    <!--    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>-->
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+<!--    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">-->
+        <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+<!--    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>-->
 
     <style>
         /*
@@ -197,22 +197,22 @@
             <div class="swiper-pagination"></div>
         </div>
         <script>
-            var swiper = new Swiper('.swiper-container', {
-                effect: 'coverflow',
-                grabCursor: false,
-                centeredSlides: true,
-                slidesPerView: 'auto',
-                coverflowEffect: {
-                    rotate: 50,
-                    stretch: 0,
-                    depth: 100,
-                    modifier: 1,
-                    slideShadows: true,
-                },
-                pagination: {
-                    el: '.swiper-pagination',
-                },
-            });
+//            var originalSwiper = new Swiper('.swiper-container', {
+//                effect: 'coverflow',
+//                grabCursor: false,
+//                centeredSlides: true,
+//                slidesPerView: 'auto',
+//                coverflowEffect: {
+//                    rotate: 50,
+//                    stretch: 0,
+//                    depth: 100,
+//                    modifier: 1,
+//                    slideShadows: true,
+//                },
+//                pagination: {
+//                    el: '.swiper-pagination',
+//                },
+//            });
 
         </script>
     </div>
@@ -233,21 +233,21 @@
             <!-- Add Pagination -->
             <div class="swiper-pagination"></div>
             <script>
-                var swiper = new Swiper('.swiper-container', {
-                    effect: 'coverflow',
-                    grabCursor: false,
-                    centeredSlides: true,
-                    slidesPerView: 'auto',
-                    coverflowEffect: {
-                        rotate: 50,
-                        stretch: 0,
-                        depth: 100,
-                        modifier: 1,
-                        slideShadows: true,
-                    },
-                    pagination: {
-                        el: '.swiper-pagination',
-                    },
+//                var swiper = new Swiper('.swiper-container', {
+//                    effect: 'coverflow',
+//                    grabCursor: false,
+//                    centeredSlides: true,
+//                    slidesPerView: 'auto',
+//                    coverflowEffect: {
+//                        rotate: 50,
+//                        stretch: 0,
+//                        depth: 100,
+//                        modifier: 1,
+//                        slideShadows: true,
+//                    },
+//                    pagination: {
+//                        el: '.swiper-pagination',
+//                    },
                 });
 
             </script>
@@ -258,24 +258,6 @@
         <img class="selectfurther" src="img/rpsdiwali.JPG" alt="kyuho solos with rps at diwali festival">
     </div>
 
-    <script>
-        function openTab(evt, tabName, tabNameAgain) {
-            var i, tabcontent, tablinks;
-            tabcontent = document.getElementsByClassName("tabcontent");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-            }
-            tablinks = document.getElementsByClassName("tablinks");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
-            }
-            document.getElementById(tabName).style.display = "block";
-            document.getElementById(tabNameAgain).style.display = "flex";
-            evt.currentTarget.className += " active";
-        }
-        document.getElementById("defaultOpen").click();
-
-    </script>
     <script>
         Amplitude.init({
             "songs": [{
@@ -302,32 +284,56 @@
 
             ]
         });
+        
+        var swiper = new Swiper('.swiper-container', {
+                effect: 'coverflow',
+                grabCursor: false,
+                centeredSlides: true,
+                slidesPerView: 'auto',
+                coverflowEffect: {
+                    rotate: 50,
+                    stretch: 0,
+                    depth: 100,
+                    modifier: 1,
+                    slideShadows: true,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                },
+            });
+        
+        function openTab(evt, tabName, tabNameAgain) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            document.getElementById(tabNameAgain).style.display = "flex";
+            evt.currentTarget.className += " active";
+        }
+        document.getElementById("defaultOpen").click();
 
+        // Aplitude progress bar event
+        function onClickProgress (e, currentIndex, self) {
+            if (Amplitude.getActiveIndex() == currentIndex) {
+                var offset = self.getBoundingClientRect();
+                var x = e.pageX - offset.left;
+                Amplitude.setSongPlayedPercentage((parseFloat(x) / parseFloat(self.offsetWidth)) * 100);
+            }
+        }
         document.getElementById('song-played-progress-1').addEventListener('click', function(e) {
-            if (Amplitude.getActiveIndex() == 0) {
-                var offset = this.getBoundingClientRect();
-                var x = e.pageX - offset.left;
-
-                Amplitude.setSongPlayedPercentage((parseFloat(x) / parseFloat(this.offsetWidth)) * 100);
-            }
+            onClickProgress(e, 0, this);
         });
-
         document.getElementById('song-played-progress-2').addEventListener('click', function(e) {
-            if (Amplitude.getActiveIndex() == 1) {
-                var offset = this.getBoundingClientRect();
-                var x = e.pageX - offset.left;
-
-                Amplitude.setSongPlayedPercentage((parseFloat(x) / parseFloat(this.offsetWidth)) * 100);
-            }
+            onClickProgress(e, 1, this);
         });
-
         document.getElementById('song-played-progress-3').addEventListener('click', function(e) {
-            if (Amplitude.getActiveIndex() == 2) {
-                var offset = this.getBoundingClientRect();
-                var x = e.pageX - offset.left;
-
-                Amplitude.setSongPlayedPercentage((parseFloat(x) / parseFloat(this.offsetWidth)) * 100);
-            }
+            onClickProgress(e, 2, this);
         });
 
     </script>
