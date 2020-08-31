@@ -116,7 +116,44 @@
     <div class="tabcontent furtherinfo" id="resumefurther">
         <img class="resumefurther" src="img/rpsdiwali.JPG" alt="kyuho solos with rps at diwali festival">
     </div>
-    <div class="tabcontent furtherinfo" id="originalfurther">
+    
+    <div class="tabcontent furtherinfo" id="contemporaryfurther">
+
+        <div class="swiper-container videos">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <iframe width="450" height="253" src="https://www.youtube.com/embed/grTHxYK9Gx8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <p class="description">Hey pepe</p>
+                </div>
+                <div class="swiper-slide">
+                    <iframe width="450" height="253" src="https://www.youtube.com/embed/IaGVAU5WY68" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <p class="description">Hey pepe</p>
+                </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+            <script>
+//                var swiper = new Swiper('.swiper-container', {
+//                    effect: 'coverflow',
+//                    grabCursor: false,
+//                    centeredSlides: true,
+//                    slidesPerView: 'auto',
+//                    coverflowEffect: {
+//                        rotate: 50,
+//                        stretch: 0,
+//                        depth: 100,
+//                        modifier: 1,
+//                        slideShadows: true,
+//                    },
+//                    pagination: {
+//                        el: '.swiper-pagination',
+//                    },
+                });
+
+            </script>
+        </div>
+    </div>
+<div class="tabcontent furtherinfo" id="originalfurther">
         <div class="swiper-container">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
@@ -196,62 +233,6 @@
             <!-- Add Pagination -->
             <div class="swiper-pagination"></div>
         </div>
-        <script>
-//            var originalSwiper = new Swiper('.swiper-container', {
-//                effect: 'coverflow',
-//                grabCursor: false,
-//                centeredSlides: true,
-//                slidesPerView: 'auto',
-//                coverflowEffect: {
-//                    rotate: 50,
-//                    stretch: 0,
-//                    depth: 100,
-//                    modifier: 1,
-//                    slideShadows: true,
-//                },
-//                pagination: {
-//                    el: '.swiper-pagination',
-//                },
-//            });
-
-        </script>
-    </div>
-
-    <div class="tabcontent furtherinfo" id="contemporaryfurther">
-
-        <div class="swiper-container videos">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <iframe width="450" height="253" src="https://www.youtube.com/embed/grTHxYK9Gx8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <p class="description">Hey pepe</p>
-                </div>
-                <div class="swiper-slide">
-                    <iframe width="450" height="253" src="https://www.youtube.com/embed/IaGVAU5WY68" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <p class="description">Hey pepe</p>
-                </div>
-            </div>
-            <!-- Add Pagination -->
-            <div class="swiper-pagination"></div>
-            <script>
-//                var swiper = new Swiper('.swiper-container', {
-//                    effect: 'coverflow',
-//                    grabCursor: false,
-//                    centeredSlides: true,
-//                    slidesPerView: 'auto',
-//                    coverflowEffect: {
-//                        rotate: 50,
-//                        stretch: 0,
-//                        depth: 100,
-//                        modifier: 1,
-//                        slideShadows: true,
-//                    },
-//                    pagination: {
-//                        el: '.swiper-pagination',
-//                    },
-                });
-
-            </script>
-        </div>
     </div>
 
     <div class="tabcontent furtherinfo" id="selectfurther">
@@ -297,6 +278,7 @@
                     modifier: 1,
                     slideShadows: true,
                 },
+                preloadImages: false,
                 pagination: {
                     el: '.swiper-pagination',
                 },
